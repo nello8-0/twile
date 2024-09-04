@@ -1,0 +1,333 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    
+}
+
+:root {
+    --background-color : #1c6758;
+    --main-color-orange : #e86a33;
+}
+
+.container {
+    padding: 20px 94px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.web-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    background-image: url(../images/page-backgroud/back-png.webp);
+    overflow: hidden; 
+}
+
+.container header {
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+}
+
+header .logo {
+  width: 150px;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+
+header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  gap: 40px;
+  margin-left: -90px;
+  margin-top: -12px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  font-weight: 400;
+  transition: 0.3s linear;
+  letter-spacing: 1px;
+}
+.nav a:hover {
+  color: var(--main-color-orange);
+}
+ul a:hover {
+  color: var(--background-color);
+}
+@keyframes landing {
+  0% {
+   left: 0;
+  }
+  50% {
+    left:120%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.container .landin {
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.landin .img-side {
+  width: 100%;
+  overflow: hidden;
+}
+
+.img-side img {
+  max-width: 100%;
+  position: relative;
+  animation-name: landing;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.landin .title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title h1 {
+  font-family:system-ui;
+  font-size: 40px;
+  color: #fff;
+  text-transform:uppercase;
+  font-weight: 500;
+  text-shadow: 0 0 1px black;
+  margin-bottom: -10px;
+}
+h1 span {
+  color: var(--main-color-orange);
+  display: block;
+}
+
+.title p {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #eeeeee80;
+  width: 95%;
+  max-width: 100%;
+}
+
+.btns button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.btns .start {
+  border-radius: 5px;
+  background-color: var(--main-color-orange);
+  transition: 0.3s;
+}
+.btns .start:hover {
+  background-color: #fff;
+  color: var(--main-color-orange);
+  border: var(--main-color-orange);
+}
+button.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button.watch:hover
+{
+  color: var(--main-color-orange);
+}
+
+.footer {
+  width: 76%;
+  margin : auto;
+  margin-top: -50px;
+}
+.footer .contain-images {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.contain-images img {
+  width: 80px;
+}
+
+/* small screen */
+.icon {
+  position: absolute;
+  right: 90px;
+}
+.icon i {
+  color: #fff;
+  font-size: 26px;
+  margin-top: -10px;
+  display: none;
+}
+header ul {
+  position: absolute;
+  left: -250px;
+  width: 50vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--main-color-orange);
+  margin: 0 !important;
+  top: -20px;
+  height: 100vh;
+  z-index: 100;
+  padding: 25px 25px !important;
+  transition: 0.5s;
+}
+ul a {
+  font-size: 25px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+ul a:hover {
+  transform:scale(1.05);
+}
+@media (max-width : 700px) {
+  header .nav {
+    display: none;
+  }
+  header .icon i {
+    display: block;
+    transition: 0.3s;
+  }
+  .web-page .container {
+    width: 100%;
+    padding:20px;
+  }
+  header {
+    width: 100%;
+    display: flex !important;
+    justify-content: center !important;
+    justify-content: space-between !important;
+  }
+  header .logo {
+    width: 100px;
+  }
+  header .icon {
+    right: 5px;
+    cursor: pointer;
+  }
+  header .icon:hover i {
+    color: var(--main-color-orange);
+  }
+
+  header .icon:hover 
+  + ul {
+    left: -20px;
+  }
+  
+  /* second */
+    .landin .img-side {
+      display: none;
+    }
+    .landin .title {
+      width: 100%;
+      max-width: 100%;
+    }
+    .footer {
+      margin: 40px auto;
+    }
+    .footer .contain-images {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-left: -10px;
+      margin-top: -30px;
+    }
+    .footer .contain-images img {
+      width: 65px;
+    }
+}
+
+@media (min-width : 401px) and (max-width: 900px) {
+  header ul {
+    left: -500px;
+  }
+  .landin {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .landin .img-side {
+    display: block;
+    width: 300px;
+  }
+  .footer .contain-images {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+    margin-top: -65px;
+  }
+  .footer .contain-images img {
+    width: 70px;
+  }
+  .landin .title {
+    align-items: center;
+  }
+}
+
+@media (min-width: 751px) {
+  header ul {
+    display: none;
+  }
+}
